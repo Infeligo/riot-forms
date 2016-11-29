@@ -1,0 +1,15 @@
+.page-header {
+    margin-bottom: 40px;
+}
+
+fieldset {
+    margin-bottom: 25px;
+}
+
+.form-group-action {
+    margin-top: 20px;
+}
+
+.touched {
+    border-color: blue;
+}

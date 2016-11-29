@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Riot Forms - Complex Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="../shared/style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1 class="page-header">Complex form example</h1>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <complex-form />
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../../node_modules/validate.js/validate.js"></script>
+<script src="../../node_modules/riot/riot+compiler.js"></script>
+
+<!-- Library -->
+<script src="../../src/utils.js"></script>
+<script src="../../src/FormControlMixin.js"></script>
+<script src="../../src/FormGroupMixin.js"></script>
+<script src="../../src/FormMixin.js"></script>
+<!-- Library controls -->
+<script type="riot/tag" src="../../src/tags/basic/text-input.tag"></script>
+<script type="riot/tag" src="../../src/tags/basic/number-input.tag"></script>
+<script type="riot/tag" src="../../src/tags/basic/date-input.tag"></script>
+<script type="riot/tag" src="../../src/tags/basic/password-input.tag"></script>
+<script type="riot/tag" src="../../src/tags/basic/check-box.tag"></script>
+<script type="riot/tag" src="../../src/tags/basic/radio-button.tag"></script>
+<script type="riot/tag" src="../../src/tags/basic/select-box.tag"></script>
+<!-- Example -->
+<script type="riot/tag" src="date-range.tag"></script>
+<script type="riot/tag" src="address-section.tag"></script>
+<script type="riot/tag" src="industry-areas.tag"></script>
+<script type="riot/tag" src="employee-row.tag"></script>
+<script type="riot/tag" src="payment-row.tag"></script>
+<script type="riot/tag" src="complex-form.tag"></script>
+<script>riot.mount('*')</script>
+</body>
+</html>

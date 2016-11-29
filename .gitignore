@@ -1,0 +1,16 @@
+*.iml
+*.log
+.idea
+.gradle
+.sonar*
+*.pid
+classes/
+
+.project
+.classpath
+.settings/
+**/build/
+**/built/
+**/genSrc/
+**/node_modules
+*.lg
