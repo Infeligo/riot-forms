@@ -1,6 +1,6 @@
 {
   "name": "riot-forms",
-  "version": "0.0.1-alpha1",
+  "version": "0.0.1-alpha.1",
   "description": "A library for creating complex forms with validation in Riot",
   "homepage": "http://github.com/infeligo/riot",
   "repository": "infeligo/riot-forms",
@@ -65,9 +65,9 @@
   "preferGlobal": true,
   "files": [
     "src",
-    "riot-forms.js",
-    "riot-forms-basic.js",
-    "riot-forms-bootsrap3.js"
+    "build/riot-forms.js",
+    "build/riot-forms-basic-controls.js"
   ],
+  "main": "src/riot-forms.js",
   "browser": "riot-forms.js"
 }
