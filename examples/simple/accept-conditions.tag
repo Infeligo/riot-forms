@@ -1,10 +1,10 @@
 <accept-conditions>
     <div class="checkbox">
         <label>
-            <check-box type="boolean" name="accept" schema="{ presence: true }" />
+            <check-box type="boolean" name="accept" schema="{ { presence: true } }" />
             Accept terms and conditions
         </label>
-        <span class="help-block" if="{ tags.accept.hasError('presence') }">
+        <span class="help-block" if="{ refs.accept && refs.accept.hasError('presence') }">
             You must accept terms and conditions to proceed!
         </span>
     </div>

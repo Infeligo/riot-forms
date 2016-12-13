@@ -2,29 +2,29 @@
     <h2>Registration</h2>
 
     <form method="post" onsubmit="{ onSubmit }" novalidate>
-        <div class="form-group { 'has-error': tags.username.isInvalid() }">
+        <div class="form-group { 'has-error': refs.username && refs.username.isInvalid() }">
             <label class="control-label">Username</label>
-            <text-input name="username" maxlength="30" format="{ format.trimmed }" />
-            <span class="help-block" if="{ tags.username.hasError('presence') }">
+            <text-input ref="username" name="username" maxlength="30" format="{ RiotForms.format.trimmed }" />
+            <span class="help-block" if="{ refs.username && refs.username.hasError('presence') }">
                 Please choose a username!
             </span>
-            <span class="help-block" if="{ tags.username.hasError('length') }">
+            <span class="help-block" if="{ refs.username && !refs.username.hasError('presence') && refs.username.hasError('length') }">
                 Username must be at least 5 characters long!
             </span>
         </div>
 
-        <div class="form-group { 'has-error': tags.password.isInvalid() }">
+        <div class="form-group { 'has-error': refs.password && refs.password.isInvalid() }">
             <label class="control-label">Password</label>
-            <password-input name="password" maxlength="60" />
-            <span class="help-block" if="{ tags.password.hasError('presence') }">
+            <password-input ref="password" name="password" maxlength="60" />
+            <span class="help-block" if="{ refs.password && refs.password.hasError('presence') }">
                 Please choose a password!
             </span>
         </div>
 
-        <div class="form-group { 'has-error': tags.passwordConfirm.isInvalid() }">
+        <div class="form-group { 'has-error': refs.passwordConfirm && refs.passwordConfirm.isInvalid() }">
             <label class="control-label">Confirm password</label>
-            <password-input name="passwordConfirm" maxlength="60" />
-            <span class="help-block" if="{ tags.passwordConfirm.hasError('presence') }">
+            <password-input ref="passwordConfirm" name="passwordConfirm" maxlength="60" />
+            <span class="help-block" if="{ refs.passwordConfirm && refs.passwordConfirm.hasError('presence') }">
                 Please type in your password again!
             </span>
         </div>
@@ -38,7 +38,7 @@
     </form>
 
     <script>
-        this.mixin(FormMixin);
+        this.mixin(RiotForms.FormMixin);
 
         this.schema = {
             username: {
@@ -60,7 +60,6 @@
 
         validateCustom(errors) {
             console.debug("SimpleForm.validateCustom(%o)", errors);
-            console.log("Custom validation called");
         }
 
         this.on('submit.valid', function (data) {
@@ -76,7 +75,6 @@
         this.on('reset', function () {
             this.reset();
         });
-
     </script>
 
 </simple-form>

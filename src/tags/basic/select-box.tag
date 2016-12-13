@@ -7,6 +7,8 @@
     </select>
     
     <script>
+        import { FormControlMixin } from 'riot-forms';
+        
         this.mixin(FormControlMixin);
         
         getValue() {

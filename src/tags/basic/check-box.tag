@@ -7,6 +7,8 @@
            onblur="{ handleBlur }"/>
     
     <script>
+        import { FormControlMixin } from 'riot-forms';
+        
         this.mixin(FormControlMixin);
 
         getRawValue() {

@@ -1,8 +1,6 @@
-(function (global) {
-
-  var format = {};
-
-  format.trimmed = {
+export default {
+  
+  trimmed: {
 
     parse: function (value) {
       return (value || "").trim();
@@ -10,6 +8,4 @@
 
   }
 
-  global.format = format;
-
-})(window);
+};

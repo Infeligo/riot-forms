@@ -1,4 +1,4 @@
-function toFormData(data) {
+export function toFormData(data) {
   var formData = new FormData();
   flatten(data, "", formData.append);
   return formData;
@@ -13,14 +13,14 @@ function flatten(obj, path, callback) {
     Object.keys(obj).forEach(function (key) {
       flatten(obj[key], (path ? path + "." : "") + key, callback);
     });    
-  } else if (typeof obj === "function") {
+  } else if (isFunction(obj)) {
     callback(path, obj());
   } else {
     callback(path, obj);
   }
 }
 
-function eachControlOrGroup(tag, callback, context) {
+export function eachControlOrGroup(tag, callback, context) {
   var key, children;
   if (tag.tags) {
     for (key in tag.tags) {
@@ -37,10 +37,17 @@ function eachControlOrGroup(tag, callback, context) {
   }
 }
 
-function ensureArray(obj, key) {
-  return Array.isArray(obj[key]) ? obj[key] : (obj[key] = []);
+/**
+ * Tests is parameter fn is a function.
+ */
+export function isFunction(fn) {
+  return typeof fn === "function";
 }
 
-function isFunction(fn) {
-  return typeof fn === "function";
+/**
+ * If obj[key] is an array, returns it. 
+ * Otherwise assigns new empty array to obj[key] and returns it.
+ */
+export function ensureArray(obj, key) {
+  return Array.isArray(obj[key]) ? obj[key] : (obj[key] = []);
 }
